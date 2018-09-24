@@ -10,13 +10,25 @@ module Datadog
         def around_perform(*args)
           pin = Pin.get_from(::Resque)
           return yield unless pin && pin.tracer
+
           pin.tracer.trace('resque.job', service: pin.service) do |span|
             span.resource = name
             span.span_type = pin.app_type
             yield
             span.service = pin.service
           end
-        ensure
+        end
+
+        def on_failure_datadog_shutdown!(*args)
+          datadog_shutdown!
+        end
+
+        def after_perform_datadog_shutdown!(*args)
+          datadog_shutdown!
+        end
+
+        def datadog_shutdown!
+          pin = Pin.get_from(::Resque)
           pin.tracer.shutdown! if pin && pin.tracer
         end
       end
