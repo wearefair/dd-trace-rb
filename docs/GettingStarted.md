@@ -1067,7 +1067,8 @@ Where `options` is an optional `Hash` that accepts the following parameters:
 
 | Key | Description | Default |
 | --- | --- | --- |
-| ``service_name`` | Service name used for `resque` instrumentation | resque |
+| ``use_sync_writer``` | *Deprecated* Use special writer that flushes span data synchronously | ```false``` |
+| ``service_name`` | Service name used for `resque` instrumentation | ```"resque"``` |
 | ``workers`` | An array including all worker classes you want to trace (eg ``[MyJob]``) | ``[]`` |
 
 ### Sequel

@@ -17,6 +17,7 @@ module Datadog
 
         @patched = false
         option :workers, default: []
+        option :use_sync_writer, default: false
 
         class << self
           def patch
