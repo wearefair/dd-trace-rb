@@ -36,7 +36,7 @@ Gem::Specification.new do |spec|
 
   # Optional extensions
   # TODO: Move this to Appraisals?
-  spec.add_development_dependency 'dogstatsd-ruby', '>= 4.0.0'
+  spec.add_development_dependency 'dogstatsd-ruby', '~> 4.0.0'
   spec.add_development_dependency 'opentracing', '>= 0.4.1'
 
   # Development dependencies

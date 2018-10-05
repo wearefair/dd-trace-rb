@@ -117,7 +117,7 @@ class TracerIntegrationTest < Minitest::Test
     tracer.configure(
       enabled: true,
       hostname: ENV.fetch('TEST_DDAGENT_HOST', 'localhost'),
-      port: ENV.fetch('TEST_DDAGENT_PORT', 8126)
+      port: ENV.fetch('TEST_DDAGENT_TRACE_PORT', 8126)
     )
 
     agent_receives_span_step1(tracer)
@@ -133,7 +133,7 @@ class TracerIntegrationTest < Minitest::Test
     tracer.configure(
       enabled: true,
       hostname: ENV.fetch('TEST_DDAGENT_HOST', 'localhost'),
-      port: ENV.fetch('TEST_DDAGENT_PORT', 8126)
+      port: ENV.fetch('TEST_DDAGENT_TRACE_PORT', 8126)
     )
 
     agent_receives_short_span(tracer)
@@ -147,7 +147,7 @@ class TracerIntegrationTest < Minitest::Test
     tracer.configure(
       enabled: true,
       hostname: ENV.fetch('TEST_DDAGENT_HOST', 'localhost'),
-      port: ENV.fetch('TEST_DDAGENT_PORT', 8126)
+      port: ENV.fetch('TEST_DDAGENT_TRACE_PORT', 8126)
     )
 
     shutdown_exec_only_once(tracer)
@@ -184,7 +184,7 @@ class TracerIntegrationTest < Minitest::Test
       tracer.configure(
         enabled: true,
         hostname: ENV.fetch('TEST_DDAGENT_HOST', 'localhost'),
-        port: ENV.fetch('TEST_DDAGENT_PORT', 8126),
+        port: ENV.fetch('TEST_DDAGENT_TRACE_PORT', 8126),
         priority_sampling: true
       )
 
