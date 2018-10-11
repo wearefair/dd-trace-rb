@@ -6,7 +6,8 @@ require 'ddtrace/version'
 
 Gem::Specification.new do |spec|
   spec.name                  = 'fair-ddtrace'
-  spec.version               = "#{Datadog::VERSION::STRING}#{ENV['VERSION_SUFFIX']}"
+  # spec.version               = "#{Datadog::VERSION::STRING}#{ENV['VERSION_SUFFIX']}"
+  spec.version               = '0.8.2.a'
   spec.required_ruby_version = '>= 1.9.1'
   spec.authors               = ['Fair']
   spec.email                 = ['catherinec@fair.com']
