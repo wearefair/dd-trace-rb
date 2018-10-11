@@ -2,6 +2,9 @@
 
 [![CircleCI](https://circleci.com/gh/DataDog/dd-trace-rb/tree/master.svg?style=svg&circle-token=b0bd5ef866ec7f7b018f48731bb495f2d1372cc1)](https://circleci.com/gh/DataDog/dd-trace-rb/tree/master)
 
+## Why this Fork?
+The v0.8.2 version of dd-trace-rb has a bug whenever calling [send_traces on the worker](https://github.com/DataDog/dd-trace-rb/blob/v0.8.2/lib/ddtrace/workers.rb#L36). Ironically, this ends up blowing up on the log line and killing the worker.
+
 ## Documentation
 
 You can find the latest documentation on [rubydoc.info][docs]
