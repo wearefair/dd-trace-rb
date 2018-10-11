@@ -5,20 +5,21 @@ $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 require 'ddtrace/version'
 
 Gem::Specification.new do |spec|
-  spec.name                  = 'ddtrace'
+  spec.name                  = 'fair-ddtrace'
   spec.version               = "#{Datadog::VERSION::STRING}#{ENV['VERSION_SUFFIX']}"
   spec.required_ruby_version = '>= 1.9.1'
-  spec.authors               = ['Datadog, Inc.']
-  spec.email                 = ['dev@datadoghq.com']
+  spec.authors               = ['Fair']
+  spec.email                 = ['catherinec@fair.com']
 
-  spec.summary     = 'Datadog tracing code for your Ruby applications'
+  spec.summary     = 'Fair fork of Datadog tracing code for your Ruby applications'
   spec.description = <<-EOS
 ddtrace is Datadog’s tracing client for Ruby. It is used to trace requests
 as they flow across web servers, databases and microservices so that developers
 have great visiblity into bottlenecks and troublesome requests.
+Find the original version at: https://github.com/DataDog/dd-trace-rb
 EOS
 
-  spec.homepage = 'https://github.com/DataDog/dd-trace-rb'
+  spec.homepage = 'https://github.com/wearefair/dd-trace-rb'
   spec.license  = 'BSD-3-Clause'
 
   if spec.respond_to?(:metadata)
